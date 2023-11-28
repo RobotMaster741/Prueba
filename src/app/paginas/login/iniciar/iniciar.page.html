@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content>
+
+  <div class="logo"></div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Iniciar Sesión</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form (submit)="iniciarSesion()" #form>
+
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="email" name="email" placeholder="tucorreo@dominio.cl"> <ion-icon
+              name="mail-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="password" [(ngModel)]="password" name="password" placeholder="tu contrasennia"> <ion-icon
+              name="lock-closed-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+
+        <ion-text class="ion-text-center">
+          ¿Olvidaste tu contraseña? <a routerLink="/login/recuperar">Haz click aquí</a>
+        </ion-text>
+
+        <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-footer class="footer-card">
+    <ion-text class="ion-text-center">
+      ¿Aún no tienes cuenta? <a routerLink="/login/registro">Regístrate aquí</a>
+    </ion-text>
+  </ion-footer>
+</ion-content>

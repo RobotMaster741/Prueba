@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/login/iniciar"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content>
+  <div class="logo"></div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registrate</ion-card-title>
+      <span>Ingresa tus datos</span>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-item>
+        <ion-input [(ngModel)]="names" type="text" placeholder="Nombre Completo"
+          [ngClass]="{ 'campo-faltante': !names }"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="email" type="text" placeholder="Correo" ng-reflect-name="email"></ion-input>
+        <ion-icon name="mail-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="telefono" type="text" maxlength="12" placeholder="Numero De Telefono" ng-reflect-name="telefono"></ion-input>
+        <ion-icon name="call-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="edad" type="text" maxlength="2" placeholder="Edad" ng-reflect-name="edad"></ion-input>
+        <ion-icon name="calendar-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="password" type="password" placeholder="contrasennia"
+          ng-reflect-name="password"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="confirmPassword" type="password" placeholder="Confrimar contrasennia"
+          ng-reflect-name="password"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+
+      <div class="btn-register">
+        <ion-button shape="round" fill="solid" class="registrarbtn" (click)="registrar()">Registrarme</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-footer class="footer-card">
+    <ion-text class="ion-text-center">
+      ¿Ya tienes Cuenta? <a routerLink="/login/iniciar">Inicia aquí</a>
+    </ion-text>
+  </ion-footer>
+</ion-content>
